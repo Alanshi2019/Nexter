@@ -1,0 +1,62 @@
+.story {
+  &__pictures {
+    background-color: $color-primary;
+    grid-column: full-start / col-end 4;
+    @media only screen and (max-width: $bp-medium) {
+      display: none;
+    }
+  }
+  &__content {
+    background-color: $color-grey-light-1;
+    grid-column: col-start 5 / full-end;
+    padding: 6rem 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 1/-1;
+    }
+  }
+  &__text {
+    font-size: 1.5rem;
+    font-family: italic;
+    margin-bottom: 4rem;
+  }
+}
+.composition {
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+}
+.composition-photo {
+  width: 53%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  transition: all 0.2s;
+  outline-offset: 2rem;
+}
+.composition-photo--p1 {
+  left: 0;
+  top: 23rem;
+}
+.composition-photo--p2 {
+  right: 2rem;
+  top: 20rem;
+}
+.composition-photo--p3 {
+  left: 20%;
+  top: 6rem;
+}
+.composition-photo:hover {
+  outline: 1.5rem solid #fff;
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 2.5rem 4re, rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+.composition:hover .composition-photo:not(:hover) {
+  transform: scale(0.95);
+}
